@@ -1,0 +1,6 @@
+{
+  "java.project.sourcePaths": ["WEB-INF/src"],
+  "java.project.referencedLibraries": [
+    "/home/infoetu/hugo.straseele.etu/s5/back-end/apache-tomcat-11.0.25/lib/servlet-api.jar"
+  ]
+}

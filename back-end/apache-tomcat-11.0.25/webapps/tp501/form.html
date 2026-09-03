@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Insert student</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>Insertion</h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <form id="loginForm" method="POST" action="insert">
+                <div class="form-group">
+                    <label for="nom" class="control-label">Nom</label>
+                    <input type="text" class="form-control" id="nom" name="nom" value="">
+                </div>
+                <div class="form-group">
+                    <label for="prenom" class="control-label">Prénom</label>
+                    <input type="text" class="form-control" id="prenom" name="prenom" value="">
+                </div>
+                <div class="form-group">
+                    <label for="groupe" class="control-label">Groupe</label>
+                    <input type="text" class="form-control" id="groupe" name="groupe" value="">
+                </div>
+                <div class="form-group">
+                    <label for="id" class="control-label">Id</label>
+                    <input type="text" class="form-control" id="id" name="id" value="">
+                </div>
+
+                <button type="submit" class="btn btn-success btn-block">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
