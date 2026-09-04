@@ -2,16 +2,42 @@ Vagrant.configure("2") do |config|
   config.vm.box = "cloud-image/debian-13"
 
   config.vm.provider "virtualbox" do |vb|
-    # Définir la mémoire vive en Mo
     vb.memory = "2048"
-    # Modifier aussi le nombre de processeurs
     vb.cpus = 2
   end
+
+  config.vm.synced_folder "~", "/iut_home"
 
   config.vm.provision "shell", 
     inline: <<-SHELL
               sudo apt-get update
               sudo apt-get install -y vim net-tools dnsutils
+              
+              sudo apt-get install -y docker.io docker-compose
+              
+          
+              sudo usermod -aG docker vagrant
+            SHELL
+  
+
+  config.vm.provision "shell",
+    inline: <<-SHELL
+              mkdir -p /etc/docker
+
+              cat <<-EOF > /etc/docker/daemon.json
+{
+  "registry-mirrors": [
+    "http://proxy-docker.iut-infobio.priv.univ-lille1.fr:5000"
+  ],
+  "default-address-pools": [
+    {
+      "base": "172.30.0.0/16",
+      "size": 24
+    }
+  ]
+}
+EOF
+              sudo systemctl restart docker
             SHELL
 
 end
