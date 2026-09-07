@@ -120,7 +120,7 @@ public class implement_algo {
         System.out.printf("%-10s | %-20s | %-15s | %-15s%n", "Taille (N)", "Algorithme", "Temps moyen (ns)", "Opérations moy.");
         System.out.println("-----------------------------------------------------------------------------");
 
-        for (int n : TAILLES) {
+        for (final int n : TAILLES) {
             long totalTimeAlgo3 = 0, totalOpsAlgo3 = 0;
             long totalTimeAlgo4 = 0, totalOpsAlgo4 = 0;
             long totalTimeAlgo6 = 0, totalOpsAlgo6 = 0;
