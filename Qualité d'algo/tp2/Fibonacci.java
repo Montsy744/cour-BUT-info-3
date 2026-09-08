@@ -39,7 +39,12 @@ public class Fibonacci {
     }
 
    
-    private static int fibo_rec_aide(final int n, final int i, final int precedent2, final int precedent1) {
+    private static int fibo_rec_aide(
+        final int n, 
+        final int i, 
+        final int precedent2, 
+        final int precedent1
+    ) {
         final int courant = precedent1 + precedent2;
         compteurAdditions++;
 
