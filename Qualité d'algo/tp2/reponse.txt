@@ -1,0 +1,16 @@
+2 Permutations
+
+On appelle permutation d'une chaîne de caractères s toute chaîne 
+de même longueur que s contenant les mêmes caractères que s. Par 
+exemple, pour “abc”, les permutations sont “abc”, “acb”, “bac”, 
+“bca”, “cab”, “cba”. Dans cet exercice, on souhaite écrire un 
+programme qui génère toutes les permutations d’une chaîne et 
+étudier sa complexité. On supposera, pour simplifier un peu le 
+problème, que toutes les lettres du mot d'entrée sont distinctes 
+les unes des autres.
+
+2.1 Nombre de permutations 𝑃⁡(𝑛)
+
+Pour une chaîne s de longueur 𝑛 et dont tous les caractères sont 
+distincts, combien y a-t-il de permutations de cette chaîne ? 
+Justifiez votre réponse. On notera 𝑃⁡(𝑛) ce nombre.
