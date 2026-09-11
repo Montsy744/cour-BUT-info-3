@@ -12,8 +12,12 @@ import jakarta.servlet.annotation.WebServlet;
 @WebServlet("/S2")
 public class S2 extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(
+            final HttpServletRequest request,
+            final HttpServletResponse response
+    )
+            throws ServletException, IOException
+    {
 
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
