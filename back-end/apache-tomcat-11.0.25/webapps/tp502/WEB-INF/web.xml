@@ -7,13 +7,13 @@
 
 <!--
     <servlet>
-        <servlet-name>Test</servlet-name>
-        <servlet-class>Test</servlet-class>
+        <servlet-name>jsp.Test</servlet-name>
+        <servlet-class>jsp.Test</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>Test</servlet-name>
-        <url-pattern>/servlet/Test</url-pattern>
+        <servlet-name>jsp.Test</servlet-name>
+        <url-pattern>/servlet/jsp.Test</url-pattern>
     </servlet-mapping>
 -->
 
