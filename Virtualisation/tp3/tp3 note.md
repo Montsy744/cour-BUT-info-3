@@ -128,12 +128,37 @@ chpasswd:
  expire: False
 
 1. Utiliser la commande `cloud-localds` pour fabriquer un fichier `seed.img` à partir du fichier `user-data.yml`
+
+```bash
+cloud-localds seed.img user-data.yml
+```
+
 2. Copier à nouveau l’image debian que vous avez téléchargée sur `disk.qcow2` (écraser l’ancienne version)
+
+```bash
+cp debian-13-genericcloud-amd64.qcow2 disk.qcow2
+```
+
 3. Lancer la machine virtuelle à l’aide de la commande précédente, **en y ajoutant** l’option `-hdb seed.img`. Cette option va utiliser l’image disque fabriquée précédemment pour attacher un deuxième disque virtuel à la machine. C’est dans ce disque que `cloud-init` ira chercher sa configuration
 4. Vérifier que la connexion avec mot de passe depuis la console est possible
+
+```bash
+kvm -m 1024 -device virtio-net,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2222-:22 -hda disk.qcow2 -hdb seed.img
+```
+
 5. Éteindre la machine virtuelle (`sudo poweroff`)
 
 Vous allez refaire ces 3 premières étapes de nombreuses fois pendant le TP. Il serait sans doute utile de mettre en place une manière de les automatiser (via un simple script shell par exemple).
+
+```bash
+#!/bin/bash
+echo "Génération de la configuration cloud-init..."
+cloud-localds seed.img user-data.yml
+echo "Réinitialisation du disque principal..."
+cp debian-13-genericcloud-amd64.qcow2 disk.qcow2
+echo "Lancement de la machine virtuelle..."
+qemu-system-x86_64 -m 1024 -hda disk.qcow2 -hdb seed.img -net nic -net user,hostfwd=tcp::2222-:22
+```
 
 #### **2.1.2. Connexion SSH par clé**
 
