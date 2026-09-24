@@ -163,7 +163,19 @@ qemu-system-x86_64 -m 1024 -hda disk.qcow2 -hdb seed.img -net nic -net user,host
 #### **2.1.2. Connexion SSH par clé**
 
 1. Lire la documentation officielle de cloud-init et modifier le fichier `user-data.yml` de façon à ajouter votre clé publique SSH à l’utilisateur par défaut
+
+```
+ssh_authorized_keys:
+    [clé ssh pub]
+
+Ouvrir un terminal > cat ./ssh/id_rsa.pub
+```
+
 2. Tester la connexion SSH à la VM (via une connexion sur le port 2222 de la machine physique)
+
+```bash 
+ssh -p 2222 debian@localhost
+```
 
 #### **2.1.3. Configuration diverses**
 
