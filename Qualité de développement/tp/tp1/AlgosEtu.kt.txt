@@ -1,0 +1,122 @@
+import kotlin.reflect.KFunction1
+
+// --------------------------------------------------------------------
+// Recherche linéaire
+
+fun rechercheLineaireIterative(e: Int, liste: List<Int>): Int {
+    return -2
+}
+
+fun rechercheLineaireRecursive(e: Int, liste: List<Int>): Int {
+    return -2
+}
+
+// --------------------------------------------------------------------
+// Recherche dichotomique
+
+fun rechercheDichoIterative (e: Int, liste: List<Int>): Int {
+    return -2
+}
+
+// Garder telle quelle pour les tests. Implémenter la fonction auxiliaire ci-dessous
+fun rechercheDichoRecursiveAvecIndices(e: Int, liste: List<Int>): Int {
+    return rechercheDichoRecursiveAvecIndicesAux(e, liste, 0, liste.size)
+}
+
+fun rechercheDichoRecursiveAvecIndicesAux(e: Int, liste: List<Int>,
+                                          bas: Int, haut: Int): Int {
+    return -2
+}
+
+
+fun rechercheDichoRecursiveSansIndices(e: Int, liste: List<Int>): Int {
+    return -2
+}
+
+// fun rechercheDichoRecursiveSansIndicesVersionNull(e: Int, liste: List<Int>): Int {
+//    return -2
+// }
+
+
+// --------------------------------------------------------------------
+// Tri par insertion
+
+fun triInsertionMutable (liste: List<Int>) : List<Int> {
+    return liste
+}
+
+fun triInsertionNonMutable (liste: List<Int>) : List<Int> {
+    return liste
+}
+
+// --------------------------------------------------------------------
+// Fonction à exécuter pour tester
+fun main () {
+
+    // Test de recherche
+
+    val liste = listOf(10, 20, 30, 40, 50, 60, 70, 80, 90)
+    val lvide = listOf<Int>()
+
+    // Chaque élément est un triplet (val, liste, indice) tel que
+    //      indice est l'indice de la première occurrence de val dans liste
+    // C'est à dire, pour chaque fonction de recherche,
+    //      recherche(val, liste) doit retourner indice
+    val casDeTestPresent = mutableListOf<Triple<Int, List<Int>, Int>>();
+    for (indice in 0 until 9)
+        casDeTestPresent.add(Triple(10*(indice+1), liste, indice))
+
+    // Chaque élément est une paire (val, liste) telle que val n'est pas présent dans liste
+    // C'est à dire, recherche(val, liste) devra retourner -1
+    val casDeTestAbsent = listOf(
+        Pair(45, liste), Pair(5, liste), Pair(100, liste), Pair(50, lvide)
+    )
+
+    // Toutes les fonctions de recherche. Décommenter au fur et à mesure
+    val fonctions = listOf(
+        ::rechercheLineaireIterative,
+        // ::rechercheLineaireRecursive,
+        // ::rechercheDichoIterative,
+        // ::rechercheDichoRecursiveAvecIndices,
+        // ::rechercheDichoRecursiveSansIndices
+    )
+
+    for (c in casDeTestPresent) {
+        val e = c.first ; val l = c.second ; val indice = c.third
+        for (recherche in fonctions) {
+            val resultatObtenu = recherche(e, l)
+            if (resultatObtenu != indice) {
+                println("Erreur pour ${recherche.name}($e, $l). Attendu: $indice, Obtenu: $resultatObtenu")
+            }
+        }
+    }
+
+    for (c in casDeTestAbsent) {
+        val e = c.first
+        val l = c.second
+        for (recherche in fonctions) {
+            val resultatObtenu = recherche(e, l)
+            if (resultatObtenu == -1)
+                println("Erreur pour ${recherche.name}($e, $l). Attendu: -1, Obtenu: $resultatObtenu")
+        }
+    }
+
+    // Test tri. Décommentez les fonctions au fur et à mesure
+    val fonctionsTri: List<KFunction1<List<Int>, List<Int>>> = listOf(
+        // ::triInsertionMutable,
+        // ::triInsertionNonMutable
+    )
+    for (tri in fonctionsTri) {
+        for (i in 1..20) {
+            val listeNonTriee = liste.shuffled()
+            val copiePourAffichage = listeNonTriee.toList()
+            val resultat = tri(listeNonTriee)
+            if (resultat != liste)
+                println("Erreur. ${tri.name}($copiePourAffichage) a donné $resultat")
+        }
+        val resultat = tri(lvide)
+        if (resultat != listOf<Int>())
+            println("Erreur. ${tri.name}($lvide) a donné $resultat")
+    }
+
+}
