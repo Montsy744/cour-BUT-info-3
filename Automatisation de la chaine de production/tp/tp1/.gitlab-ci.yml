@@ -1,0 +1,59 @@
+.stages:
+  - étape 1
+  - étape 2
+  - étape 3
+
+.mon-job-ko:
+  stage: étape 1
+  image: debian:stable
+  script:
+    - echo "Mais l'important, c'est pas la chute. C'est l'atterrissage"
+
+.mon-job-ok:
+  stage: étape 2
+  image: debian:stable
+  script:
+    - echo "Jusque ici tout va bien"
+
+.mon-job-echo:
+  stage: étape 3
+  image: debian:stable
+  script:
+    - cat /etc/debian_version
+    - echo "Jusque ici tout va bien"
+
+stages:
+  - build
+  - deploy
+
+build-docker:
+  stage: build
+  image: docker:24.0.5
+  services:
+    - docker:dind
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+    - |
+      if [ "$CI_COMMIT_REF_NAME" = "$CI_DEFAULT_BRANCH" ]; then
+        docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME $CI_REGISTRY_IMAGE:latest
+        docker push $CI_REGISTRY_IMAGE:latest
+      fi
+  rules:
+    - if: $CI_COMMIT_REF_NAME
+    
+
+pages:
+  stage: deploy
+  image: debian:stable
+  script:
+    - apt-get update && apt-get install -y pandoc
+    - mkdir public
+    - cp index.html public/
+    - pandoc --standalone -f markdown+smart README.md > public/readme.html
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
