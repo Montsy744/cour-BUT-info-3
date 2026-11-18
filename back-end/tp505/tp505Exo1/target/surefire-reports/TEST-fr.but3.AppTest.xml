@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="fr.but3.AppTest" time="0.034" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="23"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\crout\OneDrive\Hugo\unniv-lille\cour-BUT-info-3\back-end\tp505\tp505Exo1\target\test-classes;C:\Users\crout\OneDrive\Hugo\unniv-lille\cour-BUT-info-3\back-end\tp505\tp505Exo1\target\classes;C:\Users\crout\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\crout\.m2\repository\org\eclipse\persistence\eclipselink\4.0.6\eclipselink-4.0.6.jar;C:\Users\crout\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\crout\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\crout\.m2\repository\com\sun\xml\bind\jaxb-xjc\4.0.5\jaxb-xjc-4.0.5.jar;C:\Users\crout\.m2\repository\com\sun\xml\bind\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\crout\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\crout\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\crout\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.jpa\4.0.6\org.eclipse.persistence.jpa-4.0.6.jar;C:\Users\crout\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.asm\9.8.0\org.eclipse.persistence.asm-9.8.0.jar;C:\Users\crout\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.core\4.0.6\org.eclipse.persistence.core-4.0.6.jar;C:\Users\crout\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.jpa.jpql\4.0.6\org.eclipse.persistence.jpa.jpql-4.0.6.jar;C:\Users\crout\.m2\repository\org\postgresql\postgresql\42.7.14\postgresql-42.7.14.jar;C:\Users\crout\.m2\repository\org\checkerframework\checker-qual\3.55.1\checker-qual-3.55.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="23"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
+    <property name="sun.java.command" value="C:\Users\crout\AppData\Local\Temp\surefire14656271159716748865\surefirebooter-20261118093159788_3.jar C:\Users\crout\AppData\Local\Temp\surefire14656271159716748865 2026-11-18T09-31-59_518-jvmRun1 surefire-20261118093159788_1tmp surefire_0-20261118093159788_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\crout\OneDrive\Hugo\unniv-lille\cour-BUT-info-3\back-end\tp505\tp505Exo1\target\test-classes;C:\Users\crout\OneDrive\Hugo\unniv-lille\cour-BUT-info-3\back-end\tp505\tp505Exo1\target\classes;C:\Users\crout\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\crout\.m2\repository\org\eclipse\persistence\eclipselink\4.0.6\eclipselink-4.0.6.jar;C:\Users\crout\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\crout\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\crout\.m2\repository\com\sun\xml\bind\jaxb-xjc\4.0.5\jaxb-xjc-4.0.5.jar;C:\Users\crout\.m2\repository\com\sun\xml\bind\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\crout\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\crout\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\crout\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.jpa\4.0.6\org.eclipse.persistence.jpa-4.0.6.jar;C:\Users\crout\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.asm\9.8.0\org.eclipse.persistence.asm-9.8.0.jar;C:\Users\crout\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.core\4.0.6\org.eclipse.persistence.core-4.0.6.jar;C:\Users\crout\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.jpa.jpql\4.0.6\org.eclipse.persistence.jpa.jpql-4.0.6.jar;C:\Users\crout\.m2\repository\org\postgresql\postgresql\42.7.14\postgresql-42.7.14.jar;C:\Users\crout\.m2\repository\org\checkerframework\checker-qual\3.55.1\checker-qual-3.55.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\crout"/>
+    <property name="user.language" value="fr"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-10-15"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-23"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\crout\OneDrive\Hugo\unniv-lille\cour-BUT-info-3\back-end\tp505\tp505Exo1"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\crout\AppData\Local\Temp\surefire14656271159716748865\surefirebooter-20261118093159788_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="23.0.1+11-39"/>
+    <property name="user.name" value="crout"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\crout\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\crout\AppData\Local\Temp\"/>
+    <property name="java.version" value="23.0.1"/>
+    <property name="user.dir" value="C:\Users\crout\OneDrive\Hugo\unniv-lille\cour-BUT-info-3\back-end\tp505\tp505Exo1"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-23\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Python313\Scripts\;C:\Python313\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files\Pandoc\;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.11\bin;C:\Program Files\nodejs\;C:\Program Files\PostgreSQL\18\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\crout\AppData\Local\Microsoft\WindowsApps;C:\Users\crout\Downloads\Microsoft VS Code\bin;C:\ProgramData\crout\GitHubDesktop\bin;C:\Users\crout\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\crout\AppData\Roaming\npm;c:\Users\crout\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\Users\crout\Downloads\Microsoft VS Code\bin\copilot-shim;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="23.0.1+11-39"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="67.0"/>
+  </properties>
+  <testcase name="testApp" classname="fr.but3.AppTest" time="0.003"/>
+</testsuite>
