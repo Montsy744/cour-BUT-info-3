@@ -1,0 +1,23 @@
+spring:
+    config:
+        activate:
+            on-profile: not-local
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://localhost:5432/mydb
+        username: postgres
+        password: postgres
+    jpa:
+        generate-ddl: true
+        defer-datasource-initialization: true
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+                ddl-auto: create-drop
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: votre-identifiant-smtp
+        password: votre-mot-de-passe-smtp

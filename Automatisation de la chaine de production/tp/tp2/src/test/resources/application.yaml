@@ -1,0 +1,29 @@
+spring:
+    datasource:
+        url: jdbc:h2:mem:mydb;DB_CLOSE_ON_EXIT=FALSE
+        username: sa
+        password:
+        driverClassName: org.h2.Driver
+
+    h2:
+        console.enabled: true
+        # http://localhost:8080/h2-console 
+        # login: "sa"
+        # password: "password"
+
+    jpa:
+        defer-datasource-initialization: true
+        spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+                ddl-auto: create-drop
+    sql:
+        init:
+            encoding: UTF-8
+    mail:
+        host: smtp.gmail.com
+        port: 465
+        username: votre-identifiant-smtp
+        password: votre-mot-de-passe-smtp
